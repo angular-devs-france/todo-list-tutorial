@@ -9,7 +9,7 @@ L'_Angular CLI_ vous aidera dans le processus de développement et vous permettr
 
 ## Notre objectif
 
-A la fin de ce tutoriel, vous aurez une application fonctionnelle de To-Do List. Elle affichera une liste de taches qui pourront etre supprimés mais vous pourrez également en ajouter. Chaque tache existante sera modifiable et cochable/décochable.
+A la fin de ce tutoriel, vous aurez une application fonctionnelle de To-Do List. Elle affichera une liste de tâches qui pourront etre supprimés mais vous pourrez également en ajouter. Chaque tâche existante sera modifiable et cochable/décochable.
 
 La liste est enregistrée dans le [stockage local du navigateur](https://developer.mozilla.org/fr/docs/Web/API/Window/localStorage). Toutes les modifications resteront même si vous actualisez le navigateur ou même si vous éteignez votre ordinateur (tant que vous utilisez le même navigateur sur le même ordinateur, et pas en mode privé).
 
