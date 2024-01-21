@@ -15,12 +15,7 @@ import { CommonModule } from '@angular/common';
   selector: 'app-input-button-unit',
   standalone: true,
   imports: [CommonModule],
-  template: `
-    <p>
-      input-button-unit works!
-      The title is: {{ title }}
-    </p>
-  `,  
+   templateUrl: './input-button-unit.component.html',
   styleUrl: './input-button-unit.component.scss'
 })    
 export class InputButtonUnitComponent {
@@ -33,9 +28,8 @@ export class InputButtonUnitComponent {
 
 Ajoutons un élément HTML input et un bouton au modèle:
 
-{% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
+{% code title="src/app/input-button-unit/input-button-unit.component.html" %}
 ```markup
-template: `
   <p>
     input-button-unit works!
     The title is: {{ title }}
@@ -43,7 +37,6 @@ template: `
 
   <input>
   <button>Save</button>
-`,
 ```
 {% endcode %}
 
@@ -51,9 +44,9 @@ Rappel: Nous utilisons l'interpolation pour présenter la valeur de la propriét
 
 Comment pouvons-nous afficher la valeur de la propriété `title` dans l'élément HTML input lui-même?
 
-Chaque élément `input` a un attribut appelé `value`, qui contient la chaîne qui est affichée à l'intérieur de la zone `input`. En HTML, nous pouvons passer une chaîne directement à l'attribut `value` de l'élément:
+Chaque élément `input` a un attribut appelé `value`, qui contient la string qui est affichée à l'intérieur de la zone `input`. En HTML, nous pouvons passer une string directement à l'attribut `value` de l'élément:
 
-{% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
+{% code title="src/app/input-button-unit/input-button-unit.component.html" %}
 ```markup
 <input value="Hello World">
 ```
@@ -61,9 +54,11 @@ Chaque élément `input` a un attribut appelé `value`, qui contient la chaîne 
 
 Mais nous perdons la liaison dynamique entre les propriétés dans le contrôleur et le modèle.
 
-Angular nous permet de lier les propriétés au modèle facilement et commodément; nous l'avons vu avec l'interpolation. Maintenant, nous allons voir comment lier à une **propriété d'élément** (à ne pas confondre avec les propriétés de classe). **Nous entourons la propriété voulue avec des crochets et lui passons le membre de la classe**:
+Comme nous l'avons vu, Angular nous permet de lier les propriétés au modèle facilement avec l'interpolation. 
+Maintenant, nous allons voir comment lier une **propriété d'élément** à une propriété de classe. 
+Nous entourons la propriété d'élément voulue avec des crochets et lui passons le membre de la classe :
 
-{% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
+{% code title="src/app/input-button-unit/input-button-unit.component.html" %}
 ```markup
 <input [value]="title">
 ```
@@ -71,7 +66,7 @@ Angular nous permet de lier les propriétés au modèle facilement et commodéme
 
 Essayons et voyons le résultat dans le navigateur !
 
-## a# Binding to Methods
+## a# Faire du binding avec des méthodes
 
 Les expressions auxquelles nous pouvons nous lier dans le modèle ne se limitent pas aux propriétés de classe. Elles peuvent être un appel de méthode ou presque toute autre expression JavaScript valide.
 
@@ -85,13 +80,13 @@ generateTitle(): string {
 ```
 {% endcode %}
 
-Remplacez une ou les deux liaisons du titre dans le modèle par l'appel de méthode (n'oubliez pas les parenthèses !):
+Dans le modèle, remplacez les appels du titre par l'appel de la méthode (n'oubliez pas les parenthèses !) :
 
-{% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
+{% code title="src/app/input-button-unit/input-button-unit.component.html" %}
 ```markup
-  <input [value]="generateTitle()">
-
   {{ generateTitle() }}
+
+  <input [value]="generateTitle()">
 ```
 {% endcode %}
 
@@ -111,18 +106,13 @@ constructor() {
 ```
 {% endcode %}
 
-`setTimeout` est une fonction JavaScript. Son premier paramètre est ce que nous voulons qu'il se passe - une fonction de notre choix. Le deuxième paramètre est le délai que nous voulons, en millisecondes. Dans cet exemple, nous passons une **fonction anonyme en ligne** qui définit la valeur de `this.title`. Pour cela, nous utilisons l'une des nouvelles fonctionnalités de JavaScript ES6 : une **fonction fléchée**.
+`setTimeout` est une fonction JavaScript. Son premier paramètre est ce que nous voulons qu'il se passe - une fonction de notre choix. Le deuxième paramètre est le délai que nous voulons, en millisecondes. Dans cet exemple, nous passons une **fonction fléchée** qui définit la valeur de `this.title` au bout de 3 secondes.
 
-## c# Binding to Methods
-
-Les expressions auxquelles nous pouvons nous lier dans le modèle ne se limitent pas aux propriétés de classe. Elles peuvent être un appel de méthode ou presque toute autre expression JavaScript valide.
-
-## d# Resources
+## c# Resources
 
 [Angular Guide - Template Property Binding](https://angular.io/guide/template-syntax#property-binding--property-)
 
-## e# A note about accessing the DOM
-## e# Note sur l'accès au DOM
+## d# Note sur l'accès au DOM
 
 En utilisant le JavaScript classique, nous pouvons insérer la valeur dans l'entrée via ses propriétés. Nous allons récupérer l'élément du DOM et assigner la valeur du membre `title` à la propriété `value` de l'élément.
 
@@ -148,14 +138,13 @@ Cependant, **c'est fortement déconseillé dans Angular. Vous ne devriez jamais 
 {% hint style="info" %}
 💾 **Pusher votre code sur GitHub**
 
-Commit all your changes by running this command in your project directory.
 Committez tous vos changements en exécutant cette commande dans votre répertoire de projet.
 
 ```bash
 git add -A && git commit -m "votre message de commit"
 ```
 
-Pusher vos changements sur GitHub en exécutant cette commande dans votre répertoire de projet.
+Puis pusher vos changements sur GitHub en exécutant cette commande dans votre répertoire de projet.
 
 ```
 git push
