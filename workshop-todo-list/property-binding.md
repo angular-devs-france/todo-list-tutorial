@@ -15,7 +15,7 @@ import { CommonModule } from '@angular/common';
   selector: 'app-input-button-unit',
   standalone: true,
   imports: [CommonModule],
-   templateUrl: './input-button-unit.component.html',
+  templateUrl: './input-button-unit.component.html',
   styleUrl: './input-button-unit.component.scss'
 })    
 export class InputButtonUnitComponent {
