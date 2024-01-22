@@ -21,7 +21,7 @@
 * [\#10: ➕ Nouveau composant: todo-item](workshop-todo-list/new-component-todo-item.md)
 * [\#11: ⛓ Interface](workshop-todo-list/interface/README.md)
 * [\#12: 📌 Ajouter des items](workshop-todo-list/add-items.md)
-* [\#13: 🚧 Refactoriser composant App](workshop-todo-list/refactor-app-component.md)
+* [\#13: 🚧 Refactoriser App](workshop-todo-list/refactor-app-component.md)
 * [\#14: 💅 Ajouter le style](workshop-todo-list/adding-style.md)
 * [\#15:  🔋 Créer un service](workshop-todo-list/creating-a-service.md)
 * [\#16: 🎁 Ajouter des items avec le service](workshop-todo-list/add-items-using-the-service.md)
