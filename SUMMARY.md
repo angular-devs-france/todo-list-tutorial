@@ -28,7 +28,7 @@
 * [\#17: 💾 Local storage](workshop-todo-list/local-storage.md)
 * [\#18: 🗑 Supprimer un item](workshop-todo-list/remove-item.md)
 * [\#19: 🔘 Ajouter une checkbox](workshop-todo-list/adding-a-checkbox.md)
-* [\#21: 💪 Améliorer le composant todo-item](workshop-todo-list/enrich-the-todo-item-component.md)
+* [\#20: 💪 Améliorer le composant todo-item](workshop-todo-list/enrich-the-todo-item-component.md)
 * [Appendix 1: Git and GitHub](workshop-todo-list/appendix-1-git-and-github.md)
 * [Appendix 2: 🛰 Déployer votre application](workshop-todo-list/appendix-1-deploying-your-app/README.md)
   * [Déployer sur Azure Static Web Apps](workshop-todo-list/appendix-1-deploying-your-app/deploying-with-azure-static-web-apps.md)
