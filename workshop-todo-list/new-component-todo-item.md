@@ -56,7 +56,7 @@ import { Component, Input, OnInit } from '@angular/core';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './todo-item.component.html',
-  styleUrl: './todo-item.component.scss'
+  styleUrls: ['./todo-item.component.scss']
 })
 export class TodoItemComponent {
   @Input() item;
