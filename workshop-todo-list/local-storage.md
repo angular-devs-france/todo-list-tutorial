@@ -60,7 +60,7 @@ export class StorageService {
 
 Si quelque chose vous semble inhabituel ou confus, veuillez vous référer au chapitre [Créer un service](creating-a-service.md) pour plus d'informations détaillées sur les services.
 
-Puisque nous ne pouvons pas accéder directement à un élément de la liste dans le stockage local, nous n'implémenterons que deux méthodes : obtenir les données et définir les données. Le changement de la liste sera effectué par le TodoListService. Pour chaque méthode, nous passerons la clé (nom) des données que nous voulons.
+Puisque nous ne pouvons pas accéder directement à un élément de la liste dans le local storage, nous n'implémenterons que deux méthodes : obtenir les données et définir les données. Le changement de la liste sera effectué par le TodoListService. Pour chaque méthode, nous passerons la clé (nom) des données que nous voulons.
 
 ### getData
 
@@ -124,7 +124,7 @@ export class TodoListService {
 ```
 {% endcode %}
 
-Nous garderons une version de la liste de tâches en mémoire dans le service pour nous aider à la gérer dans l'application - la propriété `todoList`. Nous l'initialiserons dans le constructeur avec la liste dans le stockage local, si elle existe, sinon la liste par défaut.
+Nous garderons une version de la liste de tâches en mémoire dans le service pour nous aider à la gérer dans l'application - la propriété `todoList`. Nous l'initialiserons dans le constructeur avec la liste dans le local storage, si elle existe, sinon la liste par défaut.
 
 {% code title="src/app/services/todo-list.service.ts" %}
 ```typescript
@@ -139,7 +139,7 @@ Maintenant nous allons implémenter les méthodes pour gérer notre liste.
 
 ### addItem
 
-Lorsque nous poussons un élément dans la todoList, nous allons ensuite mettre à jour le stockage.
+Lorsque nous poussons un élément dans la todoList, nous allons ensuite mettre à jour le local storage.
 
 {% code title="src/app/services/todo-list.service.ts" %}
 ```typescript
@@ -152,7 +152,7 @@ addItem(item: TodoItem): void {
 
 ### updateItem
 
-Ici nous voulons mettre à jour un élément existant. Nous supposerons que nous détenons l'élément d'origine par référence, et que nous pouvons le trouver dans la liste. (D'autres implémentations peuvent utiliser un ID d'élément pour rechercher la liste.) Ensuite, nous le remplacerons par une nouvelle version. Enfin, nous mettrons à jour le stockage.
+Ici nous voulons mettre à jour un élément existant. Nous supposerons que nous détenons l'élément d'origine par référence, et que nous pouvons le trouver dans la liste. (D'autres implémentations peuvent utiliser un ID d'élément pour rechercher la liste.) Ensuite, nous le remplacerons par une nouvelle version. Enfin, nous mettrons à jour le local storage.
 
 {% code title="src/app/services/todo-list.service.ts" %}
 ```typescript
