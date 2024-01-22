@@ -16,7 +16,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './input-button-unit.component.html',
-  styleUrl: './input-button-unit.component.scss'
+  styleUrls: ['./input-button-unit.component.scss']
 })    
 export class InputButtonUnitComponent {
   title = 'Hello World';           

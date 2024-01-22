@@ -20,7 +20,7 @@ ng g c list-manager
   standalone: true,
   imports: [CommonModule],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   title = 'My To-Do List App';
@@ -47,7 +47,7 @@ import { TodoItem } from '../interfaces/todo-item';
   standalone: true,
   imports: [CommonModule],
   template: './list-manager.component.html',
-  styleUrl: './list-manager.component.scss'
+  styleUrls: ['./list-manager.component.scss']
 })
 export class ListManagerComponent {
   todoList: TodoItem[] = [

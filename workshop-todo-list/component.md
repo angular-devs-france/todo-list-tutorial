@@ -71,7 +71,7 @@ Retournons au fichier `app.component.ts` et regardons les métadonnées du compo
   standalone: true,
   imports: [CommonModule, RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss']
 })
 ```
 {% endtab %}

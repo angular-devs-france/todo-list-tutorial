@@ -30,7 +30,7 @@ Ouvrez le fichier `input-button-unit.component.ts`. Vous pouvez voir que _Angula
   standalone: true,
   imports: [CommonModule],
   templateUrl: './input-button-unit.component.html',
-  styleUrl: './input-button-unit.component.scss'
+  styleUrls: ['./input-button-unit.component.scss']
 })
 ```
 {% endcode %}
