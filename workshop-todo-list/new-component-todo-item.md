@@ -1,18 +1,19 @@
 # #10: ➕ Nouveau composant: todo-item
 
-Nous allons créer un nouveau composant pour afficher chaque élément de la liste de tâches. Ce sera un composant simple au début, mais il va grandir par la suite. Ce qui est important, c'est qu'il recevra l'élément de la liste de tâches en entrée de son composant parent. De cette façon, il peut être un composant réutilisable, et ne pas dépendre directement des données et de l'état de l'application.
+Nous allons créer un nouveau composant pour afficher chaque élément de la liste de tâches. Ce sera un composant simple au début, mais il va grandir par la suite. Ce qui est important, c'est qu'il recevra l'élément de la liste de tâches par le composant parent. De cette façon, il peut être un composant réutilisable, et ne pas dépendre directement des données et de l'état de l'application.
 
-Dans le terminal, créez un nouveau composant appelé `todo-item` avec la commande suivante:
+Dans le terminal, créez un nouveau composant appelé `todo-item` avec la commande suivante qui utilise les raccourcies :
 
 ```
 ng g c todo-item
 ```
+`g` est un raccourci pour `generate`et `c` est un raccourci pour `component`
 
 De retour dans votre IDE, vous pouvez voir qu'un nouveau dossier a été créé - `src/app/todo-item`, avec les fichiers du composant à l'intérieur.
 
-Utilisez le nouveau composant dans le modèle du composant `app-root` - à l'intérieur de l'élément `<li>`:
+Utilisez ce nouveau composant dans le modèle du composant `app-root` - à l'intérieur de l'élément `<li>`:
 
-{% code title="src/app/app.component.ts" %}
+{% code title="src/app/app.component.html" %}
 ```markup
 <ul>
   @for(let todoItem of todoList; track todoItem.title) {
@@ -40,9 +41,11 @@ Dans la classe `TodoItemComponent` nouvellement générée dans `todo-item.compo
 ```
 {% endcode %}
 
-Cela dit au composant de s'attendre à une entrée et de l'assigner au membre de classe appelé `item`. Assurez-vous que `Input` est ajouté à l'instruction `import` dans la première ligne du fichier. Maintenant, nous pouvons l'utiliser à l'intérieur du modèle `todo-item` et extraire le titre de l'élément avec l'interpolation: `{{ item.title }}`.
+Assurez-vous que `Input` est bien importé dans la première ligne du fichier. 
+Cette ligne indique au composant de s'attendre à une entrée et de l'assigner à la propriété `item`. 
+Maintenant, nous pouvons utiliser `item` à l'intérieur du modèle `todo-item` et extraire le titre de l'élément avec l'interpolation : `{{ item.title }}`.
 
-Le composant devrait ressembler à ceci maintenant:
+Le composant devrait ressembler à ceci maintenant :
 
 {% code title="src/app/todo-item/todo-item.component.ts" %}
 ```typescript
@@ -52,9 +55,7 @@ import { Component, Input, OnInit } from '@angular/core';
   selector: 'app-todo-item',
   standalone: true,
   imports: [CommonModule],
-  template: `
-    {{ item.title }}
-  `,
+  templateUrl: './todo-item.component.html',
   styleUrl: './todo-item.component.scss'
 })
 export class TodoItemComponent {
@@ -63,9 +64,16 @@ export class TodoItemComponent {
 ```
 {% endcode %}
 
-Maintenant nous devons passer un élément là où nous utilisons le composant. Retournez au composant `app-root` et passez le titre de l'élément au `todo-item`:
+{% code title="src/app/todo-item/todo-item.component.html" %}
+```html
+ {{ item.title }}
 
-{% code title="src/app/app.component.ts" %}
+```
+{% endcode %}
+
+Maintenant nous devons donner au composant `app-todo-item` l'élément qu'in attend avec l'`Input`. Retournez au composant `app-root` et passez l'élément au composant `app-todo-item`:
+
+{% code title="src/app/app.component.html" %}
 ```markup
 <ul>
   @for(let todoItem of todoList; track todoItem.title) {
@@ -84,7 +92,6 @@ Nous avons utilisé la liaison de propriété sur un élément que nous avons cr
 {% hint style="info" %}
 💾 **Pusher votre code sur GitHub**
 
-Commit all your changes by running this command in your project directory.
 Committez tous vos changements en exécutant cette commande dans votre répertoire de projet.
 
 ```bash
