@@ -1,6 +1,6 @@
 # #13: 🚧 Refactor App Component
 
-Nous allons effectuer un petit refactoring. L'`app-root` ne devrait pas avoir un template aussi grand et toute cette logique. Il devrait simplement appeler un autre composant qui s'en occupera.
+Nous allons effectuer un petit refactoring car l'`app-root` ne devrait pas avoir un template aussi grand et toute cette logique. Il devrait simplement appeler un autre composant qui s'en occupera.
 
 
 * Créer un composant nommé `list-manager` avec la commande suivante:
@@ -9,7 +9,7 @@ Nous allons effectuer un petit refactoring. L'`app-root` ne devrait pas avoir un
 ng g c list-manager
 ```
 
-* Déplacer le code du composant `app-root` vers `list-manager`. &#x20;
+* Déplacer le code du composant `app-root` vers `list-manager`.
 * Vous pouvez garder le titre dans `app-root`, et lui donner une belle valeur.
 * Attention à ne pas changer le nom de la classe du composant `list-manager`!
 
@@ -19,16 +19,20 @@ ng g c list-manager
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule],
-  template: `
-    <h1>
-      Welcome to {{ title }}!
-    </h1>
-  `,
+  templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'My To-Do List App';
 }
+```
+{% endcode %}
+
+{% code title="src/app/app.component.html" %}
+```html
+    <h1>
+      Welcome to {{ title }}!
+    </h1>
 ```
 {% endcode %}
 
@@ -42,17 +46,7 @@ import { TodoItem } from '../interfaces/todo-item';
   selector: 'app-list-manager',
   standalone: true,
   imports: [CommonModule],
-  template: `
-    <app-input-button-unit (submit)="addItem($event)"></app-input-button-unit>
-
-    <ul>
-      @for(let todoItem of todoList; track todoItem.title) {
-        <li>
-          <app-todo-item [item]="todoItem"></app-todo-item>
-        </li>
-      }       
-    </ul>
-  `,
+  template: './list-manager.component.html',
   styleUrl: './list-manager.component.scss'
 })
 export class ListManagerComponent {
@@ -72,17 +66,29 @@ export class ListManagerComponent {
 ```
 {% endcode %}
 
+{% code title="src/app/list-manager/list-manager.component.html" %}
+```html
+    <app-input-button-unit (submit)="addItem($event)"></app-input-button-unit>
+
+    <ul>
+      @for(let todoItem of todoList; track todoItem.title) {
+        <li>
+          <app-todo-item [item]="todoItem"></app-todo-item>
+        </li>
+      }       
+    </ul>
+```
+{% endcode %}
+
 * utilisez le nouveau composant à partir du template `app-root`:
 
-{% code title="src/app/app.component.ts" %}
+{% code title="src/app/app.component.html" %}
 ```markup
-  template: `
     <h1>
       Welcome to {{ title }}!
     </h1>
 
     <app-list-manager></app-list-manager>
-  `,
 ```
 {% endcode %}
 
@@ -91,7 +97,6 @@ Voilà! Nous pouvons continuer.
 {% hint style="info" %}
 💾 **Pusher votre code sur GitHub**
 
-Commit all your changes by running this command in your project directory.
 Committez tous vos changements en exécutant cette commande dans votre répertoire de projet.
 
 ```bash
