@@ -71,11 +71,9 @@ export class ListManagerComponent {
     <app-input-button-unit (submit)="addItem($event)"></app-input-button-unit>
 
     <ul>
-      @for(let todoItem of todoList; track todoItem.title) {
-        <li>
+        <li *ngFor="let todoItem of todoList">
           <app-todo-item [item]="todoItem"></app-todo-item>
         </li>
-      }       
     </ul>
 ```
 {% endcode %}

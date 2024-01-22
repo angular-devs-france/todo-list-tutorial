@@ -16,11 +16,9 @@ Utilisez ce nouveau composant dans le modèle du composant `app-root` - à l'int
 {% code title="src/app/app.component.html" %}
 ```markup
 <ul>
-  @for(let todoItem of todoList; track todoItem.title) {
-    <li>
+    <li *ngFor="let todoItem of todoList">
       <app-todo-item></app-todo-item>
     </li>
-  }
 </ul>
 ```
 {% endcode %}
@@ -76,11 +74,9 @@ Maintenant nous devons donner au composant `app-todo-item` l'élément qu'in att
 {% code title="src/app/app.component.html" %}
 ```markup
 <ul>
-  @for(let todoItem of todoList; track todoItem.title) {
-    <li>
+    <li *ngFor="let todoItem of todoList">
       <app-todo-item [item]="todoItem"></app-todo-item>
     </li>
-  }
 </ul>
 ```
 {% endcode %}
