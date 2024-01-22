@@ -1,18 +1,16 @@
 # #17: 💾Local storage
 
-Nous aimerions persister la liste de tâches sur notre ordinateur, afin que lorsque nous accédons ou rechargeons l'application, nous voyons la liste avec les modifications que nous avons apportées. Idéalement, la liste serait enregistrée dans une base de données, mais nous mettrons en œuvre une version simple à l'aide du stockage du navigateur lui-même.
+Nous aimerions persister la liste de tâches sur notre ordinateur, afin que lorsque nous accédons ou rechargeons l'application, nous voyons la liste avec les modifications que nous avons apportées. Idéalement, la liste serait enregistrée dans une base de données, mais nous mettrons en œuvre une version simple à l'aide du stockage du navigateur.
 
 ## Qu'est-ce que le local storage ?
 
-Local storage, comme son nom l'indique, est un outil pour stocker des données localement. Tout comme les cookies, le stockage local stocke les données sur l'ordinateur de l'utilisateur et nous donne, en tant que développeurs, un moyen rapide d'accéder à ces données à la fois en lecture et en écriture.
+Local storage, comme son nom l'indique, est un outil pour stocker des données localement. Tout comme les cookies, le local storage stocke les données sur l'ordinateur de l'utilisateur et nous donne, en tant que développeurs, un moyen rapide d'accéder à ces données à la fois en lecture et en écriture.
 
 ## Découvrons l'API du local storage
 
 Tout d'abord, pour utiliser le local storage, nous pouvons simplement accéder à une instance `localStorage` qui nous est exposée globalement. Cela signifie que nous pouvons appeler toutes les méthodes disponibles dans cette interface en utilisant simplement cette instance.
 
-{% code title="code for example" %}
-
-Local storage enregistre les données sous forme de clé/valeur. Il a deux méthodes principales : `getItem` et `setItem`. Voici un exemple de leur utilisation :
+Le local storage enregistre les données sous forme de clé/valeur. Il a deux méthodes principales : `getItem` et `setItem`. Voici un exemple de leur utilisation :
 
 {% code title="code for example" %}
 ```typescript
@@ -23,7 +21,7 @@ alert(`Hello ${ name }!`);
 ```
 {% endcode %}
 
-Une autre méthode utile est `clear`. Elle est utilisée pour effacer toutes les données du stockage local :
+Une autre méthode utile est `clear`. Elle est utilisée pour effacer toutes les données du local storage :
 
 {% code title="code for example" %}
 ```typescript
@@ -31,19 +29,19 @@ localStorage.clear();
 ```
 {% endcode %}
 
-Il existe quelques autres méthodes que vous pouvez utiliser, comme décrit dans la [documentation MDN Web](https://developer.mozilla.org/en-US/docs/Web/API/Storage).
+Il existe d'autres méthodes que vous pouvez utiliser plus occasionnellement, comme décrit dans la [documentation MDN Web](https://developer.mozilla.org/en-US/docs/Web/API/Storage).
 
 ## Implémentation dans notre application Angular
 
 Dans la section suivante, nous allons construire un service de local storage qui sera utilisé pour stocker les éléments de notre liste de tâches. Ce sera un service générique pour les listes d'objets. Nous devrons lui indiquer le nom des données que nous recherchons (une clé), afin de pouvoir l'utiliser pour stocker d'autres listes également.
 
-Comme pour les chapitres précédents, nous allons générer le service à l'aide du CLI d'Angular. Nous nommerons le nouveau service `storage`.
+Comme pour les chapitres précédents, nous allons générer le service à l'aide de _Angular CLI_. Nous nommerons ce nouveau service `storage`.
 
 ```bash
 ng g s services/storage
 ```
 
-Le nouveau fichier, `storage.service.ts`, sera créé avec le code suivant :
+Le nouveau fichier `storage.service.ts` doit ressembler à ca :
 
 {% code title="src/app/services/storage.service.ts" %}
 ```typescript
@@ -76,7 +74,7 @@ Cette méthode obtiendra et renverra les données (objet, liste, etc.) stockées
 ```
 {% endcode %}
 
-Pourquoi utiliser `JSON.parse` ? La réponse est simple : comme décrit ci-dessus, le stockage local stocke les données sous forme de paires clé-valeur, et les valeurs sont stockées sous forme de **chaînes de caractères**. Donc, si nous voulons avoir un vrai objet (ou une liste) avec lequel travailler, nous devons analyser la chaîne en un objet JavaScript valide.
+Pourquoi utiliser `JSON.parse` ? La réponse est simple : comme décrit ci-dessus, le local storage stocke les données sous forme de paires clé-valeur, et les valeurs sont stockées sous forme de **string**. Donc, si nous voulons avoir un vrai objet (ou une liste) avec lequel travailler, nous devons analyser la string en un objet JavaScript valide.
 
 ### setData
 
@@ -96,7 +94,7 @@ Utilisons ce service dans notre `ToDoListService`.
 
 ## Utiliser StorageService
 
-Nous aimerions utiliser le nouveau service créé à partir de `TodoListService`. Tout d'abord, nous injecterons `StorageService` dans `TodoListService`, tout comme nous avons injecté ce dernier dans `ListManagerComponent`. Nous demanderons une instance du service dans le constructeur, et nous assurerons que sa classe est importée. Nous déplacerons la liste de tâches par défaut en dehors de la classe. Nous ajouterons également une constante avec la clé de notre stockage.
+Nous aimerions utiliser notre nouveau service dans le `TodoListService`. Tout d'abord, nous injecterons `StorageService` dans `TodoListService`, tout comme nous avons injecté ce dernier dans `ListManagerComponent`. Nous demanderons une instance du service dans le constructeur, et nous assurerons que sa classe est importée. Nous déplacerons la liste de tâches par défaut en dehors de la classe. Nous ajouterons également une constante avec la clé de notre stockage.
 
 {% code title="src/app/services/todo-list.service.ts" %}
 ```typescript
@@ -126,7 +124,7 @@ export class TodoListService {
 ```
 {% endcode %}
 
-Nous garderons une version de la liste de tâches en mémoire dans le service pour nous aider à la gérer dans l'application - la propriété `todoList`. Nous l'initialiserons dans le constructeur avec soit la liste dans le stockage local, si elle existe, soit la liste par défaut.
+Nous garderons une version de la liste de tâches en mémoire dans le service pour nous aider à la gérer dans l'application - la propriété `todoList`. Nous l'initialiserons dans le constructeur avec la liste dans le stockage local, si elle existe, sinon la liste par défaut.
 
 {% code title="src/app/services/todo-list.service.ts" %}
 ```typescript
@@ -141,7 +139,7 @@ Maintenant nous allons implémenter les méthodes pour gérer notre liste.
 
 ### addItem
 
-Nous allons pousser un élément dans la todoList (comme avant) et ensuite mettre à jour le stockage.
+Lorsque nous poussons un élément dans la todoList, nous allons ensuite mettre à jour le stockage.
 
 {% code title="src/app/services/todo-list.service.ts" %}
 ```typescript
@@ -179,17 +177,17 @@ this.storageService.setData(todoListStorageKey, this.todoList);
 ```
 {% endcode %}
 
-Nous aimerions réduire la répétition du code et extraire le code répété dans une méthode. Vous pouvez utiliser l'IDE pour vous aider à extraire la méthode. Sélectionnez la ligne ci-dessus, puis cliquez avec le bouton droit de la souris et recherchez l'option pour refactoriser en extrayant une méthode. La méthode extraite devrait ressembler à ceci :
+Nous aimerions réduire la répétition du code et extraire le code répété dans une méthode. Vous pouvez utiliser l'IDE pour vous aider à extraire la méthode. Sélectionnez la ligne ci-dessus, puis avec le click droit de la souris recherchez l'option pour refactoriser en extrayant une méthode. La méthode extraite devrait ressembler à ceci :
 
 {% code title="src/app/services/todo-list.service.ts" %}
 ```typescript
-saveList() {
+saveList(): void {
     this.storageService.setData(todoListStorageKey, this.todoList);
 }
 ```
 {% endcode %}
 
-Maintenant, assurez-vous d'appeler `saveList` à partir de `addItem` et `updateItem`.
+Maintenant, assurez-vous d'appeler `saveList` dans les méthodes `addItem` et `updateItem`.
 
 ### deleteItem
 
@@ -197,7 +195,7 @@ Cette méthode supprimera un élément de la liste. Nous recherchons l'élément
 
 {% code title="src/app/services/todo-list.service.ts" %}
 ```typescript
-deleteItem(item: TodoItem) {
+deleteItem(item: TodoItem): void {
   const index = this.todoList.indexOf(item);
   this.todoList.splice(index, 1);
   this.saveList();
@@ -205,7 +203,7 @@ deleteItem(item: TodoItem) {
 ```
 {% endcode %}
 
-`splice(i, n)` supprime `n` éléments à partir de l'index `i`. Dans notre code, nous ne supprimons qu'un seul élément (c'est pourquoi nous utilisons 1 comme deuxième paramètre).
+`splice(i, n)` supprime `n` éléments à partir de l'index `i`. Dans notre code, nous ne voulons supprimer qu'un seul élément (c'est pourquoi nous utilisons 1 comme deuxième paramètre).
 
 ### Résultat final
 
@@ -237,22 +235,22 @@ export class TodoListService {
       storageService.getData(todoListStorageKey) || defaultTodoList;
   }
 
-  saveList() {
+  saveList(): void {
     this.storageService.setData(todoListStorageKey, this.todoList);
 }
 
-  addItem(item: TodoItem) {
+  addItem(item: TodoItem): void {
     this.todoList.push(item);
     this.saveList();
   }
 
-  updateItem(item, changes) {
+  updateItem(item: TodoItem, changes): void {
     const index = this.todoList.indexOf(item);
     this.todoList[index] = { ...item, ...changes };
     this.saveList();
   }
 
-  deleteItem(item) {
+  deleteItem(item: TodoItem): void {
     const index = this.todoList.indexOf(item);
     this.todoList.splice(index, 1);
     this.saveList();
@@ -268,12 +266,12 @@ export class TodoListService {
 
 ## Résumé
 
-Dans ce chapitre, nous avons appris ce qu'est le stockage local et comment l'utiliser. Nous avons vu que `localStorage` est un outil formidable et assez simple pour les développeurs pour stocker des données localement sur les ordinateurs/appareils des utilisateurs. Nous avons ensuite implémenté un nouveau service qui utilise `localStorage` pour stocker des données, que notre `TodoListService` utilise pour enregistrer les éléments de la liste de tâches.
+Dans ce chapitre, nous avons appris ce qu'est le local storage et comment l'utiliser. Nous avons vu que `localStorage` est un outil formidable et assez simple pour les développeurs pour stocker des données localement sur les ordinateurs/appareils des utilisateurs. Mais attention, les données ne doivent pas être sensibles.
+Nous avons ensuite implémenté un nouveau service qui utilise ce `localStorage` pour stocker des données, que notre `TodoListService` utilise pour enregistrer les éléments de la liste de tâches.
 
 {% hint style="info" %}
 💾 **Pusher votre code sur GitHub**
 
-Commit all your changes by running this command in your project directory.
 Committez tous vos changements en exécutant cette commande dans votre répertoire de projet.
 
 ```bash
