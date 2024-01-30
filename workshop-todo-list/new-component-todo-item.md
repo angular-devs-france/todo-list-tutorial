@@ -2,7 +2,7 @@
 
 Nous allons créer un nouveau composant pour afficher chaque élément de la liste de tâches. Ce sera un composant simple au début, mais il va grandir par la suite. Ce qui est important, c'est qu'il recevra l'élément de la liste de tâches par le composant parent. De cette façon, il peut être un composant réutilisable, et ne pas dépendre directement des données et de l'état de l'application.
 
-Dans le terminal, créez un nouveau composant appelé `todo-item` avec la commande suivante qui utilise les raccourcies :
+Dans le terminal, créez un nouveau composant appelé `todo-item` avec la commande suivante qui utilise les raccourcis :
 
 ```
 ng g c todo-item
@@ -69,7 +69,7 @@ export class TodoItemComponent {
 ```
 {% endcode %}
 
-Maintenant nous devons donner au composant `app-todo-item` l'élément qu'in attend avec l'`Input`. Retournez au composant `app-root` et passez l'élément au composant `app-todo-item`:
+Maintenant nous devons donner au composant `app-todo-item` l'élément qu'il attend avec l'`Input`. Retournez au composant `app-root` et passez l'élément au composant `app-todo-item`:
 
 {% code title="src/app/app.component.html" %}
 ```markup

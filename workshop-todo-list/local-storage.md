@@ -41,7 +41,7 @@ Comme pour les chapitres précédents, nous allons générer le service à l'aid
 ng g s services/storage
 ```
 
-Le nouveau fichier `storage.service.ts` doit ressembler à ca :
+Le nouveau fichier `storage.service.ts` doit ressembler à ça :
 
 {% code title="src/app/services/storage.service.ts" %}
 ```typescript

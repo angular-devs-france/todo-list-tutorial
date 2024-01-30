@@ -2,7 +2,7 @@
 
 Avec Angular, nous pouvons donner du style aux composants d'une manière qui n'affectera pas le reste de l'application. C'est une bonne pratique d'encapsuler le style lié au composant de cette façon.
 
-Nous pouvons également définir des règles de style générales à utiliser dans toute l'application. C'est une bonne pratique pour créer le même look-and-feel pour tous nos composants. Par exemple, nous pouvons décider de la palette de couleurs qui sera utilisée comme thème de notre application. Ce qui permet, si nous voulons changer les couleurs ou offrir différents thèmes, de le changer à un seul endroit, et pas dans chaque composant.
+Nous pouvons également définir des règles de style générales à utiliser dans toute l'application. C'est une bonne pratique pour créer le même rendu visuel pour tous nos composants. Par exemple, nous pouvons décider de la palette de couleurs qui sera utilisée comme thème de notre application. Ce qui permet, si nous voulons changer les couleurs ou offrir différents thèmes, de le changer à un seul endroit, et pas dans chaque composant.
 
 Angular nous donne différentes méthodes d'encapsulation du style, mais nous nous en tiendrons à la valeur par défaut.
 

@@ -183,7 +183,7 @@ getInputValue(event): string {
 
 Essayez-le !
 
-N'oubliez pas de supprimez `console.log(event);` avant de continuer.
+N'oubliez pas de supprimer `console.log(event);` avant de continuer.
 
 Vos fichier devraient ressembler à ceci :
 

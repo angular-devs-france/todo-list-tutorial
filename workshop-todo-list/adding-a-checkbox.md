@@ -48,7 +48,7 @@ export class TodoItemComponent {
 ```
 {% endcode %}
 
-Afin que la checkbox reflète le statut terminé, nous devons ajouter une liaison de propriété pour son statut comme ceci :
+Afin que la checkbox reflète le statut terminé, nous devons ajouter un *property binding* pour son statut comme ceci :
 
 {% code title="src/app/todo-item/todo-item.component.html" %}
 ```html

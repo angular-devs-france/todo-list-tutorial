@@ -6,7 +6,7 @@ Une classe est une structure programmatique spéciale. Elle est définie avec de
 
 Angular se charge de créer les instances des classes que vous définissez si elles sont reconnues comme des blocs de construction Angular. Les décorateurs font cette connexion avec Angular.
 
-A chaque fois que vous utilisez un composant dans un modèle, une nouvelle instance de celui-ci est créée. 
+A chaque fois que vous utilisez un composant dans un template, une nouvelle instance de celui-ci est créée. 
 Par exemple, ici trois instances de la classe InputButtonUnitComponent seront créées:
 
 {% code title="src/app/app.component.html" %}

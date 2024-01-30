@@ -47,7 +47,7 @@ Angular se charge de synchroniser les propriétés du composant avec son modèle
 Les doubles accolades {{}} sont appelées [**Interpolation**](https://angular.io/guide/glossary#interpolation). C'est une forme de **data binding** \(liaison de données\) dans Angular. 
 Comme nous l'avons mentionné précédemment, le code de ce fichier n'est pas utilisé tel quel lorsque le navigateur rend le composant. Angular le compile en code JavaScript. À l'une des étapes de la compilation, il recherche les interpolations à l'intérieur du modèle. Le contenu de l'interpolation est une "expression de modèle Angular" \(qui ressemble beaucoup à JavaScript\). L'expression est évaluée au moment de l'exécution, puis vous voyez le résultat.
 
-L'interpolation est l'une des fonctionnalités les plus puissantes et les plus basiques d'Angular. Elle existe depuis la première version d'Angular : AngularJS. Elle permet d'insérer très simplement des données dynamiques dans la vue.
+L'interpolation est l'une des fonctionnalités les plus puissantes et les plus basiques d'Angular. Elle permet d'insérer très simplement des données dynamiques dans la vue.
 
 Dans ce composant, l'expression est simplement `title` qui vient de la classe du composant. 
 **Jouons avec l'interpolation** 
