@@ -31,7 +31,6 @@
 * [\#20: 💪 Améliorer le composant todo-item](workshop-todo-list/enrich-the-todo-item-component.md)
 * [Appendix 1: Git and GitHub](workshop-todo-list/appendix-1-git-and-github.md)
 * [Appendix 2: 🛰 Déployer votre application](workshop-todo-list/appendix-1-deploying-your-app/README.md)
-  * [Déployer sur Azure Static Web Apps](workshop-todo-list/appendix-1-deploying-your-app/deploying-with-azure-static-web-apps.md)
   * [Déployer sur GitHub Pages](workshop-todo-list/appendix-1-deploying-your-app/deploy-to-github-pages/README.md)
 * [Appendix 3: Tutorial Extensions](workshop-todo-list/appendix-2-tutorial-extensions.md)
 * [Appendix 4: Générer un nouveau projet](workshop-todo-list/appendix-1-generating-a-new-project.md)

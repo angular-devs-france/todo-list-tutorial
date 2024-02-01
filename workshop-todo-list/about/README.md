@@ -1,6 +1,6 @@
 # #8: 📎 Element ref - \#
 
-In the last chapter, we ended with our input component able to display and change the title of our todo item. `input-button-unit.component.ts` should look like this:
+Dans le dernier chapitre, nous avons terminé avec notre composant `InputButtonUnitComponent` capable d'afficher et de changer le titre de notre élément todo. `input-button-unit.component.ts` devrait ressembler à ceci :
 
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```typescript
@@ -43,7 +43,7 @@ export class InputButtonUnitComponent implements OnInit {
 ```
 {% endcode %}
 
-First let's remove a bit of the template that we don't need. Remove these lines:
+Tout d'abord, supprimons un peu du template html dont nous n'avons pas besoin. Supprimez ces lignes :
 
 {% code title="remove this from src/app/input-button-unit/input-button-unit.component.ts" %}
 ```markup
@@ -54,18 +54,18 @@ First let's remove a bit of the template that we don't need. Remove these lines:
 ```
 {% endcode %}
 
-Now we want to take the value of the input (that the user typed) and change the title when we press the `Save` button.
+Maintenant nous voulons prendre la valeur du champ \(que l'utilisateur a tapé\) et changer le titre quand nous appuyons sur le bouton `Save`.
 
-We already know how to create a button and react to clicking on it. We now need to pass some data from a different element to the method. We want to use the `input` element's value from inside the `button` element.
+Nous savons déjà comment créer un bouton et réagir au clic. Nous devons maintenant passer des données d'un élément différent à la méthode. Nous voulons utiliser la valeur de l'élément `input` à l'intérieur de l'élément `button`.
 
-Angular helps us do exactly that. **We can store a reference to the element we want in a variable with the name we choose,** for example `inputElementRef`, **using a simple syntax - a hash.** Add `#inputElementRef` to the `input` element, and use it in the `click` event of the button:
+Angular nous aide à faire exactement cela. **Nous pouvons stocker une référence à l'élément que nous voulons dans une variable avec le nom que nous choisissons,** par exemple `inputElementRef`, **en utilisant une syntaxe simple - un `#`.** Ajoutez `#inputElementRef` à l'élément `input`, et utilisez-le dans l'événement `click` du bouton :
 
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```markup
 template: `
   <input #inputElementRef
          [value]="title"
-         (keyup.enter)="changeTitle(getInputValue($event))">
+         (keyup.enter)="changeTitle($event.target.value)">
 
   <button (click)="changeTitle(inputElementRef.value)">
     Save
@@ -74,34 +74,29 @@ template: `
 ```
 {% endcode %}
 
-Now we can use the value that the user entered in the `input` element directly in the method call to handle clicking the `Save` button!
+Maintenant nous pouvons utiliser la valeur que l'utilisateur a entrée dans l'élément `input` directement dans l'appel de méthode pour gérer le clic sur le bouton `Save` !
 
 ## What is that `#` we see?
+## Qu'est-ce que ce `#` que nous voyons ?
 
-Angular lets us define a new local variable named `inputElementRef` (or any name you choose) that holds a reference to the element we defined it on, and then use it any way we want. In our case, we use it to access the `value` property of the `input`.
+`#` est un sucre syntaxique pour quelque chose appelé **variable de référence**. Angular nous permet de définir une nouvelle variable locale nommée `inputElementRef` \(ou tout autre nom que vous choisissez\) qui contient une référence à l'élément sur lequel nous l'avons définie, et ensuite de l'utiliser comme nous le souhaitons. Dans notre cas, nous l'utilisons pour accéder à la propriété `value` de l'`input`.
 
-Instead of hunting down the elements via a DOM query (which is bad practice, as we discussed), we now can put element references in the template and access each element we want declaratively.
+Plutôt que de partir à la chasse aux éléments en interrogeant le DOM directement (avec `document.getElementById`par exemple) \(ce qui est une mauvaise pratique, comme nous l'avons discuté\), nous pouvons maintenant mettre des références d'éléments dans le template et accéder à chaque élément que nous voulons de manière déclarative.
 
-Next, we'll build the list of todo items.
+Ensuite, nous allons construire la liste des éléments de notre todo list.
 
-{% hint style="info" %}
-💾 **Save your code to GitHub**
 
-StackBlitz users - press **Save** in the toolbar and continue to the next section of the tutorial.
+💾 **Pusher votre code sur GitHub**
 
-Commit all your changes by running this command in your project directory.
+Committez tous vos changements en exécutant cette commande dans votre répertoire de projet.
 
+```bash
+git add -A && git commit -m "votre message de commit"
 ```
-git add -A && git commit -m "Your Message"
-```
 
-Push your changes to GitHub by running this command in your project directory.
+Pusher vos changements sur GitHub en exécutant cette commande dans votre répertoire de projet.
 
 ```
 git push
 ```
-{% endhint %}
-
-{% hint style="success" %}
-[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0\_08-element-ref)
 {% endhint %}

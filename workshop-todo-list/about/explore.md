@@ -1,8 +1,9 @@
-# b. Explore
+# b. Explorer
 
-Just like we did in the previous chapter, when we logged $event, you can do the same with `#inputElementRef`.
+Tout comme nous l'avons fait dans le chapitre précédent, lorsque nous avons enregistré $event, vous pouvez faire de même avec `#inputElementRef`.
 
-**Playground:** Change the method `changeTitle` so it will receive the whole element reference and log it to the console:
+
+**Expérimentation:** Changez la méthode `changeTitle` pour qu'elle reçoive la référence de l'élément entier et l'affiche dans la console :
 
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```markup
@@ -23,5 +24,5 @@ changeTitle(inputElementReference) {
 }
 ```
 
-Don't forget to put the code back the way it was after you're finished experimenting! It's best to pass to a method exactly the value it needs, instead of the whole object.
+N'oubliez pas de remettre le code comme il était après avoir fini d'expérimenter ! Il est préférable de passer à une méthode exactement la valeur dont elle a besoin, au lieu de l'objet entier.
 

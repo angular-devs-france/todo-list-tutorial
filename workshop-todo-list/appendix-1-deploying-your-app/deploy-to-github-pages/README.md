@@ -1,79 +1,71 @@
-# Deploy to GitHub Pages
+# Déployer sur GitHub Pages
 
-{% hint style="info" %}
-**StackBlitz Instructions** ![](<../../../.gitbook/assets/stackblitz-hint (1) (2).svg>)
+Pour déployer nos changements sur GitHub pages, nous allons utiliser le package `angular-cli-ghpages` [https://github.com/angular-schule/angular-cli-ghpages](https://github.com/angular-schule/angular-cli-ghpages)
 
-Follow the instructions on the [StackBlitz instructions](stackblitz.md) page in this chapter to rename your StackBlitz project and share the link to your app.
-{% endhint %}
 
-To deploy our changes to GitHub pages we will use the `angular-cli-ghpages` package [https://github.com/angular-schule/angular-cli-ghpages](https://github.com/angular-schule/angular-cli-ghpages)
+## Installer `angular-cli-ghpages`
 
-* You need to install `angular-cli-ghpages`
-* You need to save the changes you made in the project
-* Run the deploy command
-
-## Install `angular-cli-ghpages`
-
-We'll use an Angular CLI command to add this library to our app and automatically configure the deploy action. Run the following command:
+Nous allons utiliser une commande Angular CLI pour ajouter cette librairie à notre application et configurer automatiquement l'action de déploiement. Exécutez la commande suivante :
 
 ```
 ng add angular-cli-ghpages
 ```
 
-## Commit the changes
+## Committer les changements
 
-Commit your changes made by adding `angular-cli-ghpages` by running this command in your project directory.
+Committer vos changements en exécutant cette commande dans votre répertoire de projet.
 
 ```
 git add -A && git commit -m "Your Message"
 ```
 
-Then run the following command to push the changes
+Puis exécutez la commande suivante pour pousser les changements
 
 ```
 git push
 ```
 
-## Deploying to GitHub Pages
+## Déployer sur GitHub Pages
 
-Run:
+
+Utilier la commande suivante pour déployer votre application sur GitHub Pages:
 
 ```
-ng deploy --base-href="/[your-repo-name]/"
+ng deploy --base-href="/[nom-du-projet-github]/"
 ```
 
-💡 `/[your-repo-name]/` is a placeholder for your github repository name. So if you project has the name `https://github.com/myname/ng-girls` the value has to be: `--base-href="/ng-girls/"`.
+`/[your-repo-name]/` est un espace réservé pour le nom de votre dépôt github. Donc si votre projet a le nom `https://github.com/myname/ng-girls` la valeur doit être : `--base-href="/ng-girls/"`.
 
-Your app will be available at https://\[your-GH-username].github.io/\[repo-name]/
+Votre application sera disponible à l'adresse https://\[votre-nom-d'utilisateur-GH].github.io/\[nom-du-repo]/
 
-For more information see [https://github.com/angular-schule/angular-cli-ghpages](https://github.com/angular-schule/angular-cli-ghpages).
+Pour plus d'informations, voir [https://github.com/angular-schule/angular-cli-ghpages](https://github.com/angular-schule/angular-cli-ghpages).
 
-## Known Issues
+## Proboèmes connus
 
-### Blank screen (and 404 error in DevTools in Browser)
+### Ecran blanc (et erreur 404 dans DevTools dans le navigateur)
 
-If deploy succedeed but you see blank page in browser you probably used capitalized letters in your repository name. Try to add new repository with only lowercase letters from GitHub website. Later on remove connection to old one from your local files by typing:
+Si le déploiement a réussi mais que vous voyez une page blanche dans le navigateur, vous avez probablement utilisé des lettres majuscules dans le nom de votre dépôt. Essayez d'ajouter un nouveau dépôt avec uniquement des lettres minuscules depuis le site GitHub. Plus tard, supprimez la connexion à l'ancien à partir de vos fichiers locaux en tapant :
 
 ```
 git remote rm
 ```
 
-in terminal. Add connection to new repository
+Dans le terminal. Ajoutez une connexion au nouveau dépôt :
 
 ```
 git remote add origin https://github.com/{YOUR_USERNAME}/{YOUR_REPO}.git
 git push -u origin main
 ```
 
-And build website again:
+Puis buildez à nouveau le site web :
 
 ```
 ng deploy --base-href="/[your-repo-name]/"
 ```
 
-### Problem on Windows
+### Problème sur Windows
 
-On (windows) machines you might run into an issue like the following:
+Sur les machines (windows), vous pouvez rencontrer un problème comme celui-ci :
 
 ```
 An error occurred!
@@ -83,16 +75,16 @@ An error occurred!
     ...
 ```
 
-Try to debug it with `angular-cli-ghpages -S` . If you get the following error:
+Essayer de le déboguer avec `angular-cli-ghpages -S` . Si vous obtenez l'erreur suivante :
 
 ```
 fatal: could not read Username for \'https://github.com\': No error\n',
 ```
 
-you can do the following
+Vous pouvez faire ce qui suit :
 
-1. Create a Personal Access Token here: [https://github.com/settings/tokens](https://github.com/settings/tokens)
-2.  Run the following command and replace your token, organization (your user), repository, username and email:
+1. Créer un nouvel Access Token personnel ici : [https://github.com/settings/tokens](https://github.com/settings/tokens)
+3. Lancer la commande suivante et remplacer votre token, organisation (votre utilisateur), dépôt, nom d'utilisateur et email :
 
     ```
     angular-cli-ghpages --repo=https://<personal-access-token>@github.com/organization/your-repo.git --name="Displayed Username" --email=mail@example.org

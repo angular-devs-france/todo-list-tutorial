@@ -33,17 +33,17 @@ Les plugins aident l'IDE à comprendre le code. Webstorm est livré avec les plu
 
 ## NodeJS and NPM
 
-**Please check the** [**Angular CLI docs**](https://angular.io/guide/setup-local#prerequisites) **for the up-to-date prerequisites (NodeJS and NPM versions)!**
+**Veillez à vérifier les** [**prérequis de la CLI Angular**](https://angular.io/guide/setup-local#prerequisites) **pour les versions de NodeJS et NPM à jour !**
 
-Another tool which most web developers are using is **NodeJS**. Once installed, it comes with another tool called **NPM** (Node Package Manager).
+Un autre outil que la plupart des développeurs Web utilisent est **NodeJS**. Une fois installé, il est livré avec un autre outil appelé **NPM** (Node Package Manager).
 
-NodeJS lets you run JavaScript code on your computer. It is used to run a local server which serves the project files to the browser and simulates a real running website.
+NodeJS vous permet d'exécuter du code JavaScript sur votre ordinateur. Il est utilisé pour exécuter un serveur local qui sert les fichiers du projet au navigateur et simule un site Web réel.
 
-NPM allows you to easily download and install different libraries from the internet and manage their versions.
+NPM vous permet de télécharger et d'installer facilement différentes bibliothèques depuis Internet et de gérer leurs versions.
 
-**Download NodeJS** [**here**](https://nodejs.org/)**.**
+**Téléchargez NodeJS** [**ici**](https://nodejs.org/)**.**
 
-If you already have NodeJS installed, make sure you check that the version matches the prerequisites by running this in your command line / terminal:
+Si vous avez déjà NodeJS installé, assurez-vous de vérifier que la version correspond aux prérequis en exécutant ceci dans votre ligne de commande / terminal :
 
 {% code title="command-line" %}
 ```
@@ -53,9 +53,9 @@ node -v
 
 ('-v' stands for 'version'.)
 
-If it's lower than required, you need to be careful installing a new version, since you might have projects that rely on the version you have. Use Node Version Manager (NVM) to install the required version. Check this [Stack Overflow question](https://stackoverflow.com/questions/8191459/how-do-i-update-node-js) to learn how.
+Si la version est inférieure à celle requise, vous devez faire attention lors de l'installation d'une nouvelle version, car vous pourriez avoir des projets qui dépendent de la version que vous avez. Utilisez Node Version Manager (NVM) pour installer la version requise. Consultez cette [question Stack Overflow](https://stackoverflow.com/questions/8191459/how-do-i-update-node-js) pour en savoir plus.
 
-Once installed, you should also have NPM installed. Check its version by running:
+Une fois installé, vous devriez également avoir NPM installé. Vérifiez sa version en exécutant :
 
 {% code title="command-line" %}
 ```
@@ -65,32 +65,32 @@ npm -v
 
 ## Git
 
-Git is a tool that helps you manage versions of your code and work in collaboration with team members. There is a lot to know about it, but in this tutorial we will cover only basic usage.
+Git est un outil qui vous aide à gérer les versions de votre code et à travailler en collaboration avec les membres de l'équipe. Il y a beaucoup de choses à savoir à ce sujet, mais dans ce tutoriel, nous ne couvrirons que l'utilisation de base.
 
-You can download it and follow the installation instructions [here](https://git-scm.com/) .\
-When asked if you'd like to install **git bash**, say yes.
+Vous pouvez le télécharger et suivre les instructions d'installation [ici](https://git-scm.com/) .
+Quand on vous demande si vous souhaitez installer **git bash**, répondez oui.
 
 {% hint style="info" %}
-We recommend installing or updating to the latest version of Git to take advantage of their security updates.
+Nous vous recommandons d'installer ou de mettre à jour vers la dernière version de Git pour profiter de leurs mises à jour de sécurité.
 {% endhint %}
 
 ## GitHub
 
-[GitHub](https://github.com/) is an online code repository, which integrates with Git. It allows you to publish your project (code) on the Web, copy (fork and clone) other open source projects and collaborate. You can create public and private repositories and invite collaborators. Some deployment methods use GitHub to publish your application. To be able to use GitHub during the workshop make sure you create a user on GitHub (for free, of course).
+[GitHub](https://github.com/) est une application, qui s'intègre à Git. Il vous permet de publier votre projet (code) sur le Web, de copier (fork et clone) d'autres projets open source et de collaborer. Vous pouvez créer des référentiels publics et privés et inviter des collaborateurs. Certains méthodes de déploiement utilisent GitHub pour publier votre application. Pour pouvoir utiliser GitHub pendant l'atelier, assurez-vous de créer un utilisateur sur GitHub (gratuitement, bien sûr).
 
-We highly recommend using GitHub to share your project with your mentor. You and your mentor will be able to review the code, comment on it, open discussions, and more.
+Nous vous recommandons vivement d'utiliser GitHub pour partager votre projet avec votre mentor. Vous et votre mentor pourrez examiner le code, y apporter des commentaires, ouvrir des discussions, etc.
 
-Go to GitHub: [https://github.com/](https://github.com/). Click on **Sign up**. Fill the registration form and make sure to validate your email address. It is recommended to use two-factor authentication for increased security.
+Accédez à GitHub : [https://github.com/](https://github.com/). Cliquez sur **Sign up**. Remplissez le formulaire d'inscription et assurez-vous de valider votre adresse e-mail. Il est recommandé d'utiliser l'authentification à deux facteurs pour une sécurité accrue.
 
-## Creating a project with Angular CLI
+## Créer un projet avec Angular CLI
 
-The [Angular CLI](https://cli.angular.io) is a powerful tool that simplifies a lot of the development process. It also installs libraries you'll use in your current and future projects.
+[Angular CLI](https://cli.angular.io) est un outil puissant qui simplifie beaucoup le processus de développement. Il installe également des bibliothèques que vous utiliserez dans vos projets actuels et futurs.
 
-With a relatively new feature of NPM, you don't need to install the Angular CLI on your computer to create a project. The command `npx` knows where to find the Angular-CLI package by its name `@angular/cli` . It will download the package (if you don't already have it installed) and run its command `new` .
+Avec une fonctionnalité relativement nouvelle de NPM, vous n'avez pas besoin d'installer Angular CLI sur votre ordinateur pour créer un projet. La commande `npx` sait où trouver le package Angular-CLI par son nom `@angular/cli` . Il téléchargera le package (si vous ne l'avez pas déjà installé) et exécutera sa commande `new` .
 
-> Even if you have Angular-CLI installed from a previous project you were working on, we'll tell npx to use the latest version. So if your installed version is an old one, you'll still get a project created with the newest version.
+> Même si vous avez Angular-CLI installé à partir d'un projet précédent sur lequel vous travailliez, nous dirons à npx d'utiliser la dernière version. Donc, si votre version installée est ancienne, vous obtiendrez toujours un projet créé avec la dernière version.
 
-First, create a folder to store all your projects, for example _myProjects_, and then go into the folder, using the command line:
+Tout d'abord, créez un dossier pour stocker tous vos projets, par exemple _myProjects_, puis allez dans le dossier, en utilisant la ligne de commande :
 
 {% code title="command-line" %}
 ```
@@ -99,26 +99,26 @@ cd the-path-to-your-folder/myProjects
 {% endcode %}
 
 Now, create an Angular project by running:
+Maintenant, créez un projet Angular en exécutant :
 
 ```
 npx @angular/cli@latest new todo-list
 ```
 
-Angular CLI will ask a couple of questions to help create a new application. Answer the questions as shown below:
+Angular CLI posera quelques questions pour vous aider à créer une nouvelle application. Répondez aux questions comme indiqué ci-dessous :
 
-1. Would you like to add Angular routing? (y/N): **N**
-2. Which stylesheet format would you like to use? (Use arrow keys): Select **SCSS**
-3. Do you want to enable Server-Side Rendering (SSR) and Static Site Generation (SSG/Prerendering)?  (y/N): **N**
+1. Which stylesheet format would you like to use? (Use arrow keys): Select **SCSS**
+2. Do you want to enable Server-Side Rendering (SSR) and Static Site Generation (SSG/Prerendering)?  (y/N): **N**
 
-This can take a while, since many packages are being downloaded from the web and installed.
+Cela peut prendre un certain temps, car de nombreux packages sont téléchargés depuis le Web et installés.
 
-_**If, for any reason the command**** ****`npx`**** ****doesn't work, follow the**_[ _**instructions in the bottom of this page**_](./#if-npx-doesnt-work)_**, and then come back here to run your project.**_
+_**Si, pour une raison quelconque, la commande**_ _**`npx`**_ _**ne fonctionne pas, suivez les**_ [_**instructions en bas de cette page**_](./#if-npx-doesnt-work)_**,**_ _**puis revenez ici pour exécuter votre projet.**_
 
-Read more about the Angular CLI in the following section.
+Apprenez-en plus sur Angular CLI dans la section suivante.
 
-### Running your Project
+### Exécution de votre projet
 
-Enter the new folder that the Angular-CLI created for this project:
+Entrez dans le nouveau dossier que la CLI Angular a créé pour ce projet :
 
 {% code title="command-line" %}
 ```
@@ -126,7 +126,7 @@ cd todo-list
 ```
 {% endcode %}
 
-Once inside the folder of the application, run the application by using the following command:
+Une fois dans le dossier de l'application, exécutez l'application en utilisant la commande suivante :
 
 {% code title="command-line" %}
 ```bash
@@ -134,65 +134,36 @@ ng serve -o
 ```
 {% endcode %}
 
-`ng` is the command that runs the local version of Angular-CLI that's installed in your project. We will use this command to create new components, build the project, and more.
+`ng` est la commande qui exécute la version locale d'Angular-CLI installée dans votre projet. Nous utiliserons cette commande pour créer de nouveaux composants, construire le projet, et plus encore.
 
-The flag `-o` is a short for `--open`, which will open your browser in the right URL: [`localhost:4200`](http://localhost:4200)
+Le flag `-o` est un raccourci pour `--open`, qui ouvrira votre navigateur à la bonne URL : [`localhost:4200`](http://localhost:4200)
 
-You should see the page like this:
+Vous devriez voir la page comme ceci :
 
 <figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption><p>start screen. welcome message depends on project name</p></figcaption></figure>
 
 
-## Congratulations!
+## Félicitations !
 
-You have a running Angular application! **Keep the terminal where you ran the `ng serve` command open as you're working on the application.** Changes you make to the project code is immediately reflected in the web browser.\
-You can open another terminal to perform tasks in parallel.
+Vous avez une application Angular en cours d'exécution ! **Gardez le terminal où vous avez exécuté la commande `ng serve` ouvert pendant que vous travaillez sur l'application.** Les modifications que vous apportez au code du projet sont immédiatement reflétées dans le navigateur Web.
+Vous pouvez ouvrir un autre terminal pour effectuer des tâches en parallèle.
 
-To stop the app from running, press `Ctrl+C` in the terminal, or close the terminal.
+Pour arrêter l'application, appuyez sur `Ctrl+C` dans le terminal, ou fermez le terminal.
 
-Now we're ready to start developing!
+Maintenant, nous sommes prêts à commencer à développer !
 
 {% hint style="success" %}
 [See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0\_01-installations)
 {% endhint %}
 
-## 💾 Save your code to GitHub
+## 💾 Enregistrez votre code sur GitHub
 
-Angular-CLI has already set up with git, included all the project files and performed the first commit. You can already start using GitHub to save your project online.
+Angular-CLI est déjà configuré avec git, a inclus tous les fichiers du projet et a effectué le premier commit. Vous pouvez déjà commencer à utiliser GitHub pour enregistrer votre projet en ligne.
 
-You might wonder why we're saving to GitHub now. Saving coding work in progress to an accessible code repository is a software development good practice. Doing so also allows mentors to better assist you with this step and as we work through the tutorial. We want for you to be able to continue working on the tutorial if you run out of time during the workshop.
+Vous vous demandez peut-être pourquoi nous enregistrons sur GitHub maintenant. Enregistrer le travail de codage en cours dans un référentiel de code accessible est une bonne pratique de développement de logiciels. Cela permet également aux mentors de mieux vous aider à cette étape et au fur et à mesure que nous travaillons sur le tutoriel. Nous voulons que vous puissiez continuer à travailler sur le tutoriel si vous manquez de temps pendant l'atelier.
 
-Go to [Appendix 1: Git and GitHub](../appendix-1-git-and-github.md) for instructions to publish your code.
+Allez à [Appendice 1: Git et GitHub](../appendix-1-git-and-github.md) pour obtenir des instructions sur la publication de votre code.
 
-## Deploy your app
+## Déployer votre application
 
-At this point you can already deploy your app. Meaning it will be available to everyone online! There are several companies and methods that can host your web app. Choose a method and get the instructions in[ ](../appendix-1-deploying-your-app/)[Appendix 2: Deploying your app.](../appendix-1-deploying-your-app/)
-
-## _Run the following commands only if npx doesn't work..._
-
-Install the Angular-CLI globally by running:
-
-{% code title="command-line" %}
-```
-npm i -g @angular/cli
-```
-{% endcode %}
-
-This command runs the recently installed NPM program. It knows where to find the package Angular-CLI package by its name `@angular/cli`. The `i` parameter, is a short form of `install`. The `-g` parameter, stands for the word `global` - we'd like to have the Angular-CLI globally installed on the computer, so that we could use it from any folder to create any future projects.
-
-After the installation succeeds, assuming you're still in the folder you created for holding your projects (`myProjects`), run the Angular-CLI command `new` to create a new Angular project:
-
-{% code title="command-line" %}
-```
-ng new todo-list
-```
-{% endcode %}
-
-Angular-CLI will ask a couple of questions to help create a new application. Answer the questions as shown below:
-
-1. Which stylesheet format would you like to use? (Use arrow keys): Select **SCSS**
-2. Would you like to add SSR? (y/N): **N**
-
-This can take a while, since many packages are being downloaded from the web and installed.
-
-Now, go back to [running your project](./#running-your-project).
+A ce stade, vous pouvez déjà déployer votre application. Cela signifie qu'elle sera disponible en ligne pour tout le monde ! Il existe plusieurs entreprises et méthodes qui peuvent héberger votre application Web. Choisissez une méthode et obtenez les instructions dans [Appendice 2: Déployer votre application.](../appendix-1-deploying-your-app/)
