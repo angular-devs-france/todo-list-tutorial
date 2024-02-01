@@ -5,7 +5,7 @@ Tout comme nous l'avons fait dans le chapitre précédent, lorsque nous avons en
 
 **Expérimentation:** Changez la méthode `changeTitle` pour qu'elle reçoive la référence de l'élément entier et l'affiche dans la console :
 
-{% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
+{% code title="src/app/input-button-unit/input-button-unit.component.html" %}
 ```markup
 <input #inputElementRef
        [value]="title"              
@@ -17,12 +17,14 @@ Tout comme nous l'avons fait dans le chapitre précédent, lorsque nous avons en
 ```
 {% endcode %}
 
+{% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```typescript
-changeTitle(inputElementReference) {
+changeTitle(inputElementReference: any): void {
   console.log(inputElementReference);
   this.title = inputElementReference.value;
 }
 ```
+{% endcode %}
 
 N'oubliez pas de remettre le code comme il était après avoir fini d'expérimenter ! Il est préférable de passer à une méthode exactement la valeur dont elle a besoin, au lieu de l'objet entier.
 

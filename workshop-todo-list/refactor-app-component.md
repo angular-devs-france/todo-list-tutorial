@@ -38,14 +38,16 @@ export class AppComponent {
 
 {% code title="src/app/list-manager/list-manager.component.ts" %}
 ```typescript
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+import { InputButtonUnitComponent } from '../input-button-unit/input-button-unit.component';
 import { TodoItem } from '../interfaces/todo-item';
+import { TodoItemComponent } from '../todo-item/todo-item.component';
 
 @Component({
   selector: 'app-list-manager',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, InputButtonUnitComponent, TodoItemComponent],
   template: './list-manager.component.html',
   styleUrls: ['./list-manager.component.scss']
 })
@@ -59,7 +61,7 @@ export class ListManagerComponent {
     {title: 'deploy app'},
   ];
 
-  addItem(title: string) {    
+  addItem(title: string): void {    
     this.todoList.push({ title });
   }
 }
@@ -78,7 +80,7 @@ export class ListManagerComponent {
 ```
 {% endcode %}
 
-* utilisez le nouveau composant à partir du template `app-root`:
+* utilisez le nouveau composant à partir du template `app-root` et importer le :
 
 {% code title="src/app/app.component.html" %}
 ```markup

@@ -1,10 +1,10 @@
 # #1: ⌛ Installations
 
-Bien qu'il soit possible de développer des applications Web avec un simple éditeur de texte, les outils disponibles rendent le développement plus facile et plus agréable. Nous aurons besoin d'un navigateur pour voir le résultat, de NodeJS pour exécuter des scripts sur notre ordinateur, et de NPM pour récupérer facilement des bibliothèques sur le Web. Avec NPM, nous installerons Angular CLI, qui exécutera un script avec NodeJS pour créer un projet de base pour nous, et utiliser NPM pour récupérer les bibliothèques dont nous aurons besoin pour le projet (comme Angular). Un IDE nous aidera à écrire le code et à gérer le projet.
+Bien qu'il soit possible de développer des applications Web avec un simple éditeur de texte, les outils disponibles rendent le développement plus facile et plus agréable. Nous aurons besoin d'un navigateur pour voir le résultat, de NodeJS pour exécuter des scripts sur notre ordinateur, et de NPM pour récupérer facilement des bibliothèques sur le Web. Avec NPM, nous installerons *Angular CLI*, qui exécutera un script avec NodeJS pour créer un projet de base pour nous, et utiliser NPM pour récupérer les bibliothèques dont nous aurons besoin pour le projet (comme Angular). Un IDE nous aidera à écrire le code et à gérer le projet.
 
 En complément, nous recommandons Git pour gérer les versions de votre code, et GitHub pour le publier et le partager.
 
-Jetez un coup d'œil au [tutoriel vidéo](https://www.facebook.com/719166003/videos/1048549972848310/) dans le groupe Facebook ngGirls où Shmuela montre comment vérifier et mettre à jour l'environnement de développement. (Vous devrez peut-être rejoindre le groupe pour y accéder.) Notez que cette vidéo a été enregistrée avec la version 16 d'Angular, et que les versions ultérieures ont des différences dans le contenu des fichiers créés et de l'application de base. De plus, Shmuela indique d'installer Angular CLI globalement sur l'ordinateur. Cependant, nous utiliserons `npx` pour créer le projet.
+Jetez un coup d'œil au [tutoriel vidéo](https://www.facebook.com/719166003/videos/1048549972848310/) dans le groupe Facebook ngGirls où Shmuela montre comment vérifier et mettre à jour l'environnement de développement. (Vous devrez peut-être rejoindre le groupe pour y accéder.) Notez que cette vidéo a été enregistrée avec la version 16 d'Angular, et que les versions ultérieures ont des différences dans le contenu des fichiers créés et de l'application de base. De plus, Shmuela indique d'installer *Angular CLI* globalement sur l'ordinateur. Cependant, nous utiliserons `npx` pour créer le projet.
 
 {% embed url="https://www.facebook.com/719166003/videos/1048549972848310/" %}
 
@@ -33,9 +33,9 @@ Les plugins aident l'IDE à comprendre le code. Webstorm est livré avec les plu
 
 ## NodeJS and NPM
 
-**Veillez à vérifier les** [**prérequis de la CLI Angular**](https://angular.io/guide/setup-local#prerequisites) **pour les versions de NodeJS et NPM à jour !**
+**Veillez à vérifier les** [**prérequis d'*Angular CLI***](https://angular.io/guide/setup-local#prerequisites) **pour les versions de NodeJS et NPM à jour !**
 
-Un autre outil que la plupart des développeurs Web utilisent est **NodeJS**. Une fois installé, il est livré avec un autre outil appelé **NPM** (Node Package Manager).
+Un autre outil que la plupart des développeurs Web utilisent est **NodeJS**. Une fois installé, il est livré avec **NPM** (Node Package Manager).
 
 NodeJS vous permet d'exécuter du code JavaScript sur votre ordinateur. Il est utilisé pour exécuter un serveur local qui sert les fichiers du projet au navigateur et simule un site Web réel.
 
@@ -43,7 +43,7 @@ NPM vous permet de télécharger et d'installer facilement différentes biblioth
 
 **Téléchargez NodeJS** [**ici**](https://nodejs.org/)**.**
 
-Si vous avez déjà NodeJS installé, assurez-vous de vérifier que la version correspond aux prérequis en exécutant ceci dans votre ligne de commande / terminal :
+Si vous avez déjà NodeJS installé, assurez-vous que la version correspond aux prérequis en exécutant ceci dans votre ligne de commande / terminal :
 
 {% code title="command-line" %}
 ```
@@ -51,7 +51,7 @@ node -v
 ```
 {% endcode %}
 
-('-v' stands for 'version'.)
+('-v' pour 'version')
 
 Si la version est inférieure à celle requise, vous devez faire attention lors de l'installation d'une nouvelle version, car vous pourriez avoir des projets qui dépendent de la version que vous avez. Utilisez Node Version Manager (NVM) pour installer la version requise. Consultez cette [question Stack Overflow](https://stackoverflow.com/questions/8191459/how-do-i-update-node-js) pour en savoir plus.
 
@@ -76,19 +76,19 @@ Nous vous recommandons d'installer ou de mettre à jour vers la dernière versio
 
 ## GitHub
 
-[GitHub](https://github.com/) est une application, qui s'intègre à Git. Il vous permet de publier votre projet (code) sur le Web, de copier (fork et clone) d'autres projets open source et de collaborer. Vous pouvez créer des référentiels publics et privés et inviter des collaborateurs. Certains méthodes de déploiement utilisent GitHub pour publier votre application. Pour pouvoir utiliser GitHub pendant l'atelier, assurez-vous de créer un utilisateur sur GitHub (gratuitement, bien sûr).
+[GitHub](https://github.com/) est une application, qui s'intègre à Git. Elle vous permet de publier votre projet (code) sur le Web, de copier (fork et clone) d'autres projets open source et de collaborer. Vous pouvez créer des référentiels publics et privés et inviter des collaborateurs. Certaines méthodes de déploiement utilisent GitHub pour publier votre application. Pour pouvoir utiliser GitHub pendant l'atelier, assurez-vous de créer un utilisateur sur GitHub (gratuitement, bien sûr).
 
 Nous vous recommandons vivement d'utiliser GitHub pour partager votre projet avec votre mentor. Vous et votre mentor pourrez examiner le code, y apporter des commentaires, ouvrir des discussions, etc.
 
 Accédez à GitHub : [https://github.com/](https://github.com/). Cliquez sur **Sign up**. Remplissez le formulaire d'inscription et assurez-vous de valider votre adresse e-mail. Il est recommandé d'utiliser l'authentification à deux facteurs pour une sécurité accrue.
 
-## Créer un projet avec Angular CLI
+## Créer un projet avec *Angular CLI*
 
-[Angular CLI](https://cli.angular.io) est un outil puissant qui simplifie beaucoup le processus de développement. Il installe également des bibliothèques que vous utiliserez dans vos projets actuels et futurs.
+[*Angular CLI*](https://cli.angular.io) est un outil puissant qui simplifie beaucoup le processus de développement. Il installe également des bibliothèques que vous utiliserez dans vos projets actuels et futurs.
 
-Avec une fonctionnalité relativement nouvelle de NPM, vous n'avez pas besoin d'installer Angular CLI sur votre ordinateur pour créer un projet. La commande `npx` sait où trouver le package Angular-CLI par son nom `@angular/cli` . Il téléchargera le package (si vous ne l'avez pas déjà installé) et exécutera sa commande `new` .
+Avec une fonctionnalité relativement nouvelle de NPM, vous n'avez pas besoin d'installer *Angular CLI* sur votre ordinateur pour créer un projet. La commande `npx` sait où trouver le package Angular-CLI par son nom `@angular/cli` . Il téléchargera le package (si vous ne l'avez pas déjà installé) et exécutera sa commande `new` .
 
-> Même si vous avez Angular-CLI installé à partir d'un projet précédent sur lequel vous travailliez, nous dirons à npx d'utiliser la dernière version. Donc, si votre version installée est ancienne, vous obtiendrez toujours un projet créé avec la dernière version.
+> Même si vous avez *Angular CLI* installé à partir d'un projet précédent sur lequel vous travailliez, nous dirons à npx d'utiliser la dernière version. Donc, si votre version installée est ancienne, vous obtiendrez toujours un projet créé avec la dernière version.
 
 Tout d'abord, créez un dossier pour stocker tous vos projets, par exemple _myProjects_, puis allez dans le dossier, en utilisant la ligne de commande :
 
@@ -98,14 +98,13 @@ cd the-path-to-your-folder/myProjects
 ```
 {% endcode %}
 
-Now, create an Angular project by running:
 Maintenant, créez un projet Angular en exécutant :
 
 ```
 npx @angular/cli@latest new todo-list
 ```
 
-Angular CLI posera quelques questions pour vous aider à créer une nouvelle application. Répondez aux questions comme indiqué ci-dessous :
+*Angular CLI* posera quelques questions pour vous aider à créer une nouvelle application. Répondez aux questions comme indiqué ci-dessous :
 
 1. Which stylesheet format would you like to use? (Use arrow keys): Select **SCSS**
 2. Do you want to enable Server-Side Rendering (SSR) and Static Site Generation (SSG/Prerendering)?  (y/N): **N**
@@ -114,11 +113,11 @@ Cela peut prendre un certain temps, car de nombreux packages sont téléchargés
 
 _**Si, pour une raison quelconque, la commande**_ _**`npx`**_ _**ne fonctionne pas, suivez les**_ [_**instructions en bas de cette page**_](./#if-npx-doesnt-work)_**,**_ _**puis revenez ici pour exécuter votre projet.**_
 
-Apprenez-en plus sur Angular CLI dans la section suivante.
+Apprenez-en plus sur *Angular CLI* dans la section suivante.
 
 ### Exécution de votre projet
 
-Entrez dans le nouveau dossier que la CLI Angular a créé pour ce projet :
+Entrez dans le nouveau dossier que *Angular CLI* a créé pour ce projet :
 
 {% code title="command-line" %}
 ```
@@ -134,7 +133,7 @@ ng serve -o
 ```
 {% endcode %}
 
-`ng` est la commande qui exécute la version locale d'Angular-CLI installée dans votre projet. Nous utiliserons cette commande pour créer de nouveaux composants, construire le projet, et plus encore.
+`ng` est la commande qui exécute la version locale *Angular CLI* installée dans votre projet. Nous utiliserons cette commande pour créer de nouveaux composants, construire le projet, et plus encore.
 
 Le flag `-o` est un raccourci pour `--open`, qui ouvrira votre navigateur à la bonne URL : [`localhost:4200`](http://localhost:4200)
 
@@ -152,13 +151,11 @@ Pour arrêter l'application, appuyez sur `Ctrl+C` dans le terminal, ou fermez le
 
 Maintenant, nous sommes prêts à commencer à développer !
 
-{% hint style="success" %}
-[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0\_01-installations)
-{% endhint %}
+
 
 ## 💾 Enregistrez votre code sur GitHub
 
-Angular-CLI est déjà configuré avec git, a inclus tous les fichiers du projet et a effectué le premier commit. Vous pouvez déjà commencer à utiliser GitHub pour enregistrer votre projet en ligne.
+*Angular CLI* est déjà configuré avec git, a inclus tous les fichiers du projet et a effectué le premier commit. Vous pouvez déjà commencer à utiliser GitHub pour enregistrer votre projet en ligne.
 
 Vous vous demandez peut-être pourquoi nous enregistrons sur GitHub maintenant. Enregistrer le travail de codage en cours dans un référentiel de code accessible est une bonne pratique de développement de logiciels. Cela permet également aux mentors de mieux vous aider à cette étape et au fur et à mesure que nous travaillons sur le tutoriel. Nous voulons que vous puissiez continuer à travailler sur le tutoriel si vous manquez de temps pendant l'atelier.
 

@@ -121,13 +121,13 @@ Utilisons le service dans le composant `list-manager`.
 * Injectez le `TodoListService` par le constructeur.
 
 {% code title="src/app/list-manager/list-manager.component.ts" %}
-
 ```typescript
 export class ListManagerComponent {
   todoList: TodoItem[];
 
   constructor(private todoListService: TodoListService) { }
 ```
+{% endcode %}
 
 * Assurez-vous que le `TodoListService` est bien importé.
 

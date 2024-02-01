@@ -56,6 +56,21 @@ Ouvrez le modèle du composant racine App `app.component.html` et ajoutez la bal
 {% endcode %}
 
 Vérifiez ce qui est nouveau dans le navigateur !
+Mince, une erreur ! En effet, nous essayons d'utiliser notre nouveau composant sans l'importer.
+
+{% code title="src/app/app.component.ts" %}
+```typescript
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [CommonModule, InputButtonUnitComponent],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.scss'
+})
+```
+{% endcode %}
+
+C'est bon maintenant ? 
 
 Ajoutons du contenu dans notre nouveau composant. Tout d'abord, ajoutez une variable `title` que nous utiliserons comme titre de l'élément todo :
 
