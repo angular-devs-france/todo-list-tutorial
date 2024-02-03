@@ -24,7 +24,7 @@ Assurez-vous que `Output` et `EventEmitter` sont bien importés dans la premièr
 
 {% code title="src/app/input-button-unit.component.ts" %}
 ```typescript
-import { Component, OnInit, Output, EventEmitter} from '@angular/core';
+import { Component, Output, EventEmitter} from '@angular/core';
 ```
 {% endcode %}
 
@@ -78,7 +78,7 @@ Maintenant, il ne reste plus qu'à implémenter la méthode `addItem`. Elle reç
 
 {% code title="src/app/app.component.ts" %}
 ```typescript
-addItem(title: string) {    
+addItem(title: string): void {    
   this.todoList.push({ title: title });
 }
 ```
@@ -90,7 +90,7 @@ Essayez - entrez un nouveau titre de tâches dans le champ de saisie et soumette
 
 {% code title="code for example" %}
 ```typescript
-addItem(value: string) {    
+addItem(value: string): void {    
   this.todoList.push({ title: value });
 }
 ```

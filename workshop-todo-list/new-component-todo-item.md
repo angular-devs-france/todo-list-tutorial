@@ -47,7 +47,8 @@ Le composant devrait ressembler à ceci maintenant :
 
 {% code title="src/app/todo-item/todo-item.component.ts" %}
 ```typescript
-import { Component, Input, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-todo-item',
@@ -57,7 +58,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./todo-item.component.scss']
 })
 export class TodoItemComponent {
-  @Input() item;
+   @Input() item!: {title: string};
 }
 ```
 {% endcode %}

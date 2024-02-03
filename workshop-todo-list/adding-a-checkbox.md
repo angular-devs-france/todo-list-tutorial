@@ -21,12 +21,10 @@ Maintenant pour que la checkbox fasse quelque chose, nous devons ajouter un gest
 
 {% code title="src/app/todo-item/todo-item.component.html" %}
 ```markup
-<div>
-  <input type="checkbox"
-         class="todo-checkbox"
-         (click)="completeItem()"/>
-  {{ item.title }}
-</div>
+<input type="checkbox"
+        class="todo-checkbox"
+        (click)="completeItem()"/>
+{{ item.title }}
 ```
 {% endcode %}
 
@@ -52,13 +50,11 @@ Afin que la checkbox reflète le statut terminé, nous devons ajouter un *proper
 
 {% code title="src/app/todo-item/todo-item.component.html" %}
 ```html
-<div>
-  <input type="checkbox"
-         class="todo-checkbox"
-         (click)="completeItem()"
-         [checked]="item.completed"/>
-  {{ item.title }}
-</div>
+<input type="checkbox"
+        class="todo-checkbox"
+        (click)="completeItem()"
+        [checked]="item.completed"/>
+{{ item.title }}
 ```
 {% endcode %}
 
@@ -81,22 +77,12 @@ Plaçons le titre de l'élément dans un `<span>`, puis utilisons NgClass pour a
 Et enfin, ajoutez le CSS à notre fichier `todo-item.component.scss` :
 
 ```css
-  .todo-complete {
-    text-decoration: line-through;
-  }
+.todo-complete {
+  text-decoration: line-through;
+}
 ```
 
-La prochaine étape consiste à dire à l'élément parent `list-manager` quoi faire, lorsque l'événement de mise à jour est émis. Pour ce faire, nous devons lier l'action de mise à jour et la méthode de mise à jour qui déclenchera une fonction appropriée dans `TodoListService`. Trouvez le sélecteur `app-todo-item` dans le modèle :
-
-{% code title="src/app/list-manager/list-manager.component.html" %}
-```html
-<li>
-  <app-todo-item [item]="todoItem" (remove)="removeItem($event)"></app-todo-item>
-</li>
-```
-{% endcode %}
-
-Et appliquez les modifications :
+La prochaine étape consiste à dire à l'élément parent `list-manager` quoi faire, lorsque l'événement de mise à jour est émis. Pour ce faire, nous devons lier l'action de mise à jour et la méthode de mise à jour qui déclenchera une fonction appropriée dans `TodoListService`. Trouvez le sélecteur `app-todo-item` dans le modèle et ajouter l'update :
 
 {% code title="src/app/list-manager/list-manager.component.html" %}
 ```html
@@ -112,7 +98,7 @@ Enfin créer une méthode supplémentaire pour gérer cet événement de mise à
 
 {% code title="src/app/list-manager/list-manager.component.ts" %}
 ```typescript
-updateItem(item: TodoItem, changes): void {
+updateItem(item: TodoItem, changes: any): void {
   this.todoListService.updateItem(item, changes);
 }
 ```

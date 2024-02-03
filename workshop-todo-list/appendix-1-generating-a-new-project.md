@@ -1,4 +1,3 @@
-# Appendix 4: Generating a new project
 # Appendice 4: Générer un nouveau projet
 
 Dans chaque projet, il existe différentes façons de commencer, la plupart d'entre elles concernent les outils d'échafaudage comme Yeoman ou Slush. Ces outils génèrent un projet de démarrage, vous aident à générer les fichiers nécessaires, et prennent soin de construire et d'exécuter le projet.

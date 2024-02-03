@@ -48,7 +48,7 @@ Chaque élément `input` a un attribut appelé `value`, qui contient la string q
 
 {% code title="src/app/input-button-unit/input-button-unit.component.html" %}
 ```markup
-<input value="Hello World">
+<input value="Hi there">
 ```
 {% endcode %}
 

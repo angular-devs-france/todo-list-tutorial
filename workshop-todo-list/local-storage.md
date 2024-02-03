@@ -1,6 +1,7 @@
 # #17: 💾Local storage
 
 Nous aimerions persister la liste de tâches sur notre ordinateur, afin que lorsque nous accédons ou rechargeons l'application, nous voyons la liste avec les modifications que nous avons apportées. Idéalement, la liste serait enregistrée dans une base de données, mais nous mettrons en œuvre une version simple à l'aide du stockage du navigateur.
+Essayez de refresh la page après avoir ajouté un ou plusieurs items à la liste... 
 
 ## Qu'est-ce que le local storage ?
 
@@ -129,8 +130,7 @@ Nous garderons une version de la liste de tâches en mémoire dans le service po
 {% code title="src/app/services/todo-list.service.ts" %}
 ```typescript
 constructor(private storageService: StorageService) {
-  this.todoList = 
-    storageService.getData(todoListStorageKey) || defaultTodoList;
+  this.todoList = this.storageService.getData(todoListStorageKey) || defaultTodoList;
 }
 ```
 {% endcode %}
@@ -156,7 +156,7 @@ Ici nous voulons mettre à jour un élément existant. Nous supposerons que nous
 
 {% code title="src/app/services/todo-list.service.ts" %}
 ```typescript
-updateItem(item: TodoItem, changes): void {
+updateItem(item: TodoItem, changes: any): void {
   const index = this.todoList.indexOf(item);
   this.todoList[index] = { ...item, ...changes };
   this.storageService.setData(todoListStorageKey, this.todoList);
@@ -231,8 +231,7 @@ export class TodoListService {
   todoList: TodoItem[];
 
   constructor(private storageService: StorageService) {
-    this.todoList = 
-      storageService.getData(todoListStorageKey) || defaultTodoList;
+    this.todoList = this.storageService.getData(todoListStorageKey) || defaultTodoList;
   }
 
   saveList(): void {
@@ -244,7 +243,7 @@ export class TodoListService {
     this.saveList();
   }
 
-  updateItem(item: TodoItem, changes): void {
+  updateItem(item: TodoItem, changes: any): void {
     const index = this.todoList.indexOf(item);
     this.todoList[index] = { ...item, ...changes };
     this.saveList();
@@ -263,6 +262,7 @@ export class TodoListService {
 }
 ```
 {% endcode %}
+Essayez de refresh la page après avoir ajouté un ou plusieurs items à la liste... 
 
 ## Résumé
 

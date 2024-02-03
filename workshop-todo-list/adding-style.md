@@ -135,7 +135,7 @@ Comment cette feuille de style est-elle attachée au composant `input-button-uni
 
 Le sélecteur `:host` est appliqué à l'élément qui contient ce composant, ici `<app-input-button-unit>`. Cet élément ne fait pas partie du modèle de ce composant, il apparaît dans le modèle de son parent. C'est ainsi que nous pouvons contrôler son style à partir du composant.
 
-Nous devons ajouter la classe `todo-input` à l'élément `input`:
+Nous devons ajouter la classe `todo-input` à l'élément `input` :
 
 {% code title="src/app/input-button-unit/input-button-unit.component.html" %}
 ```html
@@ -143,6 +143,17 @@ Nous devons ajouter la classe `todo-input` à l'élément `input`:
        #inputElementRef
        [value]="title"
        (keyup.enter)="submitValue(getInputValue($event))">
+```
+{% endcode %}
+
+Supprimons la partie qui n'est plus utile :
+
+{% code title="src/app/input-button-unit/input-button-unit.component.html" %}
+```html
+<p>
+  input-button-unit works!
+  The title is: {{ title }}
+</p>
 ```
 {% endcode %}
 

@@ -69,9 +69,9 @@ Retournons au fichier `app.component.ts` et regardons les métadonnées du compo
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
+  imports: [CommonModule, InputButtonUnitComponent],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrl: './app.component.scss'
 })
 ```
 {% endtab %}

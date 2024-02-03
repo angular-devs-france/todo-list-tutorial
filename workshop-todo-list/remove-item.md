@@ -61,7 +61,7 @@ Maintenant nous devons simplement ajouter la méthode `removeItem()` à la class
 
 {% code title="src/app/list-manager/list-manager.component.ts" %}
 ```typescript
-removeItem(item) {
+removeItem(item: TodoItem): void {
   this.todoListService.deleteItem(item);
 }
 ```

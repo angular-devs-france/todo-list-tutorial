@@ -40,8 +40,8 @@ Definissons l'`@Input` de l'élément pour qu'il soit de ce nouveau type. Cela p
 
 {% code title="src/app/todo-item/todo-item.component.ts" %}
 ```typescript
-export class TodoItemComponent implements OnInit {
-  @Input() item: TodoItem;
+export class TodoItemComponent {
+  @Input() item!: TodoItem;
 ```
 {% endcode %}
 

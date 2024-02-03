@@ -24,8 +24,6 @@ export class InputButtonUnitComponent {
 ```
 {% endcode %}
 
-Le composant `input-button-unit` devrait ressembler à ceci:
-
 {% code title="src/app/input-button-unit/input-button-unit.component.html" %}
 ```markup
     <p>
