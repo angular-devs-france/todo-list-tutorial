@@ -13,7 +13,7 @@
 * [\#5: 💼 Class](workshop-todo-list/class.md)
 * [\#6: 📥 Property binding](workshop-todo-list/property-binding.md)
 * [\#7: 📤 Event binding](workshop-todo-list/event-binding.md)
-* [\#8: 📎 Element ref - \#](workshop-todo-list/about/README.md)
+* [\#8: 📎 Element ref - \#](workshop-todo-list/about/about.md)
   * [a. A propos](workshop-todo-list/about/about.md)
   * [b. Explore](workshop-todo-list/about/explore.md)
   * [c. Resources](workshop-todo-list/about/resources.md)
